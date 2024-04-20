@@ -1,10 +1,6 @@
 ﻿using projeto1.models;
 
-var meuContador = new Contador();
-
-meuContador.Incrementar();
-meuContador.Incrementar();
-meuContador.Incrementar();
-meuContador.Decrementar();
-
-Console.WriteLine("valor final do contador : " + meuContador.Valor);
+var termometroCozinha = new Termometro();
+termometroCozinha.DefinirFaixaDeTemperatura(18.0, 24.0);
+termometroCozinha.AjustarTemperatura(17.0);
+termometroCozinha.MostrarTemperatura();
