@@ -14,3 +14,16 @@ tablet.Desligar();
 tablet.Ligar();
 tablet.ObterDescricao();
 tablet.VerificarBateria();
+
+
+List<INotificacao> notifications = new List<List<INotificacao> >();
+notifications.Add(new EmailNotificacao());
+notifications.Add(new PushNotificacao());
+notifications.Add(new SmsNotificacao());
+
+foreach (var notificacao in notifications)
+{
+
+    Console.WriteLine(notificacao.Enviar());
+    
+}
