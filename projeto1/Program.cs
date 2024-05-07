@@ -1,29 +1,29 @@
 ﻿using projeto1.models;
+Console.WriteLine("opa");
+// var smartphone = new Smartphone("Android", "XIAOMI", "Redmi", "2022");
 
-var smartphone = new Smartphone("Android", "XIAOMI", "Redmi", "2022");
-
-smartphone.Desligar();
-smartphone.Ligar();
-smartphone.ObterDescricao();
-smartphone.VerificarBateria();
-
-
-var tablet = new Tablet("100x90", "iphone", "apple", "2019");
-
-tablet.Desligar();
-tablet.Ligar();
-tablet.ObterDescricao();
-tablet.VerificarBateria();
+// smartphone.Desligar();
+// smartphone.Ligar();
+// smartphone.ObterDescricao();
+// smartphone.VerificarBateria();
 
 
-List<INotificacao> notifications = new List<List<INotificacao> >();
-notifications.Add(new EmailNotificacao());
-notifications.Add(new PushNotificacao());
-notifications.Add(new SmsNotificacao());
+// var tablet = new Tablet("100x90", "iphone", "apple", "2019");
 
-foreach (var notificacao in notifications)
-{
+// tablet.Desligar();
+// tablet.Ligar();
+// tablet.ObterDescricao();
+// tablet.VerificarBateria();
 
-    Console.WriteLine(notificacao.Enviar());
+
+// List<INotificacao> notifications = new List<List<INotificacao> >();
+// notifications.Add(new EmailNotificacao());
+// notifications.Add(new PushNotificacao());
+// notifications.Add(new SmsNotificacao());
+
+// foreach (var notificacao in notifications)
+// {
+
+//     Console.WriteLine(notificacao.Enviar());
     
-}
+// }
