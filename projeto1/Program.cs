@@ -1,40 +1,36 @@
-﻿using projeto1.models;
-var cg1 = new ConsoleGame("DayZ", 4);
-var cg2 = new ConsoleGame("Project Zomboid", 2);
-var cg3 = new ConsoleGame("Cyber Punk", 1);
-var cg4 = new ConsoleGame("GTA V", 9);
-var cg5 = new ConsoleGame("Prince of Persia", 19);
-var cg6 = new ConsoleGame("Call of Duty", 8);
-var cg7 = new ConsoleGame("Valheim", 17);
-var cg8 = new ConsoleGame("Samurai Shodow", 7);
-var cg9 = new ConsoleGame("King of fighters", 1);
-var cg10 = new ConsoleGame("Double Dragon", 5);
+﻿// Instancia o gerenciador de tickets
+using projeto1.models;
 
+GerenciadorDeTickets gerenciador = new GerenciadorDeTickets();
 
-var dicConsoleGame = new Dictionary<string, ConsoleGame>() { };
+// Adicionando alguns tickets ao sistema
+gerenciador.AdicionarTicket(new Ticket(1, "Falha no login", Prioridade.Alta));
+gerenciador.AdicionarTicket(new Ticket(2, "Erro ao carregar página", Prioridade.Media));
+gerenciador.AdicionarTicket(new Ticket(3, "Pedido de atualização de software", Prioridade.Baixa));
+gerenciador.AdicionarTicket(new Ticket(4, "Problema de performance no servidor", Prioridade.Alta));
+gerenciador.AdicionarTicket(new Ticket(5, "Erro no banco de dados", Prioridade.Media));
 
-dicConsoleGame.Add("1", cg1);
-dicConsoleGame.Add("2", cg2);
-dicConsoleGame.Add("3", cg3);
-dicConsoleGame.Add("4", cg4);
-dicConsoleGame.Add("5", cg5);
-dicConsoleGame.Add("6", cg6);
-dicConsoleGame.Add("7", cg7);
-dicConsoleGame.Add("8", cg8);
-dicConsoleGame.Add("9", cg9);
-dicConsoleGame.Add("10", cg10);
+// Exibindo tickets antes da resolução
+Console.WriteLine("Tickets antes da resolução:");
+gerenciador.ImprimirTickets();
 
-void ListarTodos()
+// Resolvendo tickets
+Console.WriteLine("Processo de resolução de tickets:");
+gerenciador.ResolverTicket();
+gerenciador.ResolverTicket();
+gerenciador.ResolverTicket();
+
+// Exibindo tickets após resolver alguns
+Console.WriteLine("Tickets após resolver alguns:");
+gerenciador.ImprimirTickets();
+
+// Continuar a resolver todos os tickets
+Console.WriteLine("Resolvendo todos os tickets restantes:");
+while (gerenciador.filaAlta.Count > 0 || gerenciador.filaMedia.Count > 0 || gerenciador.filaBaixa.Count > 0)
 {
-    foreach (var console in dicConsoleGame)
-    {
-        Console.WriteLine("cód :  " + console.Key + " Título : | " + console.Value.Nome + " | qtd : " + console.Value.Quantidade);
-    }
+    gerenciador.ResolverTicket();
 }
 
-
-
-
-
-
-
+// Verificando se todos os tickets foram resolvidos
+Console.WriteLine("Todos os tickets foram resolvidos:");
+gerenciador.ImprimirTickets();
