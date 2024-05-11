@@ -7,8 +7,8 @@ namespace projeto1.models
 {
     public class Editor
     {
-        public List<SessaoDeEdicao> sessoesAbertas { get; set; }
-        public Dictionary<string, SessaoDeEdicao> sessoesPorId { get; set; }
+        public List<SessaoDeEdicao>? sessoesAbertas { get; set; }
+        public Dictionary<string, SessaoDeEdicao>? sessoesPorId { get; set; }
 
         public void AbrirSessao(SessaoDeEdicao sessao)
         {
